@@ -1,19 +1,40 @@
 package agurchu.codewithritmo.scheduler;
 
 public class PersonalEvent extends Event {
-    public String eventName ;
-    public String eventDate;
-    public int duration;
-    public String priority;
+    private String eventName ;
+    private String eventDate;
+    private int duration;
+    private String priority;
 
 
     public PersonalEvent( ) {
         this.eventName = "Personal Event";
+        this.eventDate = "2025-01-01";
+        this.duration = 60;
+        this.priority = "Low";
     }
+
+    public PersonalEvent(String eventName, String eventDate, int duration){
+        this.eventName = eventName;
+        this.eventDate = eventDate;
+        this.duration = duration;
+
+    }
+
+    public PersonalEvent(String eventName){
+
+        this.eventName = eventName;
+    }
+
 
     @Override
    public String getEventName() {
-        return eventName;
+        return  eventName;
+    }
+
+    @Override
+    public void setEventName(PersonalEvent eventName) {
+
     }
 
 
@@ -24,8 +45,8 @@ public class PersonalEvent extends Event {
     }
 //
     @Override
-    public void setEventName(String eventName) {
-
+    public void setEventName(String newEventName) {
+    this.eventName = newEventName;
     }
 
     @Override
@@ -39,13 +60,15 @@ public class PersonalEvent extends Event {
     }
 //
     @Override
-    public void setEventDate(String eventDate) {
+    public void setEventDate(String newEventDate) {
+        this.eventDate = newEventDate;
 
     }
 
 
     @Override
-    public void setDuration(int duration) {
+    public void setDuration(int newDuration) {
+        this.duration = newDuration;
 
     }
 

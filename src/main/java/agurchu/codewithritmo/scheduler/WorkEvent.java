@@ -33,6 +33,11 @@ public class WorkEvent extends Event {
     }
 
     @Override
+    public void setEventName(PersonalEvent eventName) {
+
+    }
+
+    @Override
     public String getPriority() {
         return "";
     }
