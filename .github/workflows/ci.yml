@@ -1,6 +1,6 @@
 on:
   push:
-    branches:[main]
+    branches: [main]
 
 jobs:
   build-and-test:
@@ -9,7 +9,7 @@ jobs:
     steps:
 
       - name: Compile
-      -   run: mvn clean compile
+        run: mvn -B clean compile
       - name: Run test
         run: mvn -B test
-        
+
