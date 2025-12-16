@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:[main]
+
+jobs:
+  build-and-test:
+    runs-on: windows
+
+    steps:
+
+      - name: Compile
+      -   run: mvn clean compile
+      - name: Run test
+        run: mvn -B test
+        

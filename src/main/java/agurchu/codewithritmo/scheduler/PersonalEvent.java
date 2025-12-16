@@ -46,7 +46,7 @@ public class PersonalEvent extends Event {
 //
     @Override
     public void setEventName(String newEventName) {
-    this.eventName = newEventName;
+    eventName = newEventName;
     }
 
     @Override
