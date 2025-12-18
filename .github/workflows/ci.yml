@@ -5,6 +5,9 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout code
@@ -19,4 +22,17 @@ jobs:
         run: mvn -B clean compile
       - name: Run test
         run: mvn -B test
+      - name: log in to Github Container Registry
+        uses: docker/login-active@v3
+        with:
+          registry: gh.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+      - name: Docker image
+        uses: docker/build-push-action@v
+        with:
+
+          context: .
+          push: true
+          tags: ghcr.io/${{github.repository_owner}}/user-manager:latest
 
