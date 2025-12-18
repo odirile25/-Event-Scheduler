@@ -34,5 +34,5 @@ jobs:
 
           context: .
           push: true
-          tags: ghcr.io/${{github.repository_owner}}/Event-scheduler:latest
+          tags: ghcr.io/${{github.repository_owner}}/event-scheduler:latest
 
